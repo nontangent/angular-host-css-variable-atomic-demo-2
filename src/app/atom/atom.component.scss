@@ -1,0 +1,18 @@
+@import 'host-variable';
+$host: host('atom');
+
+:host {
+  @include hvar(--color, red);
+  @include hvar(--width, 50px);
+  @include hvar(--height, 50px);
+  @include hvar(--side-padding, 8px);
+}
+
+:host {
+  display: block;
+  color: hvar(--color);
+  width: calc(hvar(--width) - hvar(--side-padding) * 2);
+  height: hvar(--height);
+  padding: 0 hvar(--side-padding);
+  outline: hvar(--color) solid 1px;
+}

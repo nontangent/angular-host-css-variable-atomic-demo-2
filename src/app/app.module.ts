@@ -2,14 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ChildComponent } from './components/child/child.component';
-import { ParentComponent } from './components/parent/parent.component';
+import { AtomComponent } from './atom/atom.component';
+import { MoleculeComponent } from './molecule/molecule.component';
+import { OrganismComponent } from './organism/organism.component';
+import { TemplateComponent } from './template/template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    ParentComponent
+    AtomComponent,
+    MoleculeComponent,
+    OrganismComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule

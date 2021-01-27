@@ -1,20 +1,23 @@
-@import "~host-css-variable/host-variable";
-$host: host("parent");
+@import 'host-variable';
+$host: host('molecule');
 
 :host {
-  @include hvar(--width, 100%);
-  @include hvar(--height, 100vh);
-  @include hvar(--side-padding, 16px);
+  @include hvar(--color, red);
+  @include hvar(--width, 100px);
+  @include hvar(--height, 100px);
+  @include hvar(--side-padding, 8px);
 }
 
 :host {
   display: block;
+  color: hvar(--color);
   width: calc(hvar(--width) - hvar(--side-padding) * 2);
   height: hvar(--height);
   padding: 0 hvar(--side-padding);
-  outline: skyblue solid 1px;
+  outline: hvar(--color) solid 1px;
 
-  app-child {
+  app-atom {
+    --color: hvar(--color);
     --width: calc(hvar(--width) - hvar(--side-padding) * 2);
     --height: calc(hvar(--height) - 32px);
     --side-padding: 16px;

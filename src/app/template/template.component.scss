@@ -1,0 +1,25 @@
+@import 'host-variable';
+$host: host('template');
+
+:host {
+  @include hvar(--color, blue);
+  @include hvar(--width, 200px);
+  @include hvar(--height, 200px);
+  @include hvar(--side-padding, 24px);
+}
+
+:host {
+  display: block;
+  color: hvar(--color);
+  width: calc(hvar(--width) - hvar(--side-padding) * 2);
+  height: hvar(--height);
+  padding: 0 hvar(--side-padding);
+  outline: hvar(--color) solid 1px;
+
+  app-organism {
+    --color: hvar(--color);
+    --width: calc(hvar(--width) - hvar(--side-padding) * 2);
+    --height: calc(hvar(--height) - 32px);
+    --side-padding: 16px;
+  }
+}
