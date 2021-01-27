@@ -1,4 +1,4 @@
-@import 'host-variable';
+@import "~host-css-variable/host-variable";
 $host: host('molecule');
 
 :host {
